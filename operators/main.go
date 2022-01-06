@@ -1,41 +1,34 @@
 package main
 
-import (
-	"fmt"
-	"math"
-)
+import "fmt"
 
 func main() {
-	//multiplication
-	// area = πr
-	var radius = 12.0
-	area := math.Pi * radius * radius
-	fmt.Println("area is", area)
+	// precedence
+	// multiplication and devision
+	a := 12.0 * 3.0 / 4.0
+	b := (12.0 * 3.0) / 4.0
+	c := 12.0 * (3.0 / 4.0)
+	fmt.Println("a", a, "b", b, "c", c)
 
-	// integer division
-	half := 1 / 2
-	fmt.Println("half with integer division:", half)
+	// integer devision
+	unclear := 12 * (3 / 4)
+	fmt.Println("unclear", unclear)
 
-	halfFloat := 1.0 / 2.0
-	fmt.Println("halfFloat:", halfFloat)
+	// perentesis
+	f := 12.0 / 3.0 / 4.0
+	fmt.Println("f", f)
+	f = 12.0 / (3.0 / 4.0)
+	fmt.Println("f", f)
 
-	// squering (raising to the power)
-	badThreeSquared := 3 ^ 2
-	fmt.Println("Bad three squared", badThreeSquared)
+	// addition and substraction
+	fmt.Println()
+	x := 12 + 3 - 4
+	y := (12 + 3) - 4
+	z := 12 + (3 - 4)
+	fmt.Println("x", x, "y", y, "z", z)
 
-	goodThreeSquared := math.Pow(3.0, 2.0)
-	fmt.Println("Good three squared", goodThreeSquared)
-
-	// modulus
-	remainder := 50 % 3
-	fmt.Println("Remainder:", remainder)
-
-	// unary operators
-	x := 3
-	x++
-	fmt.Println("x is now", x)
-
-	x--
-	x--
-	fmt.Println("x is now", x)
+	x = 12 + 3*4
+	y = (12 + 3) * 4
+	z = 12 + (3 * 4)
+	fmt.Println("x", x, "y", y, "z", z)
 }
