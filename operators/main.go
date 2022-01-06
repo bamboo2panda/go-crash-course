@@ -3,20 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	// does one number devide exactly into another?
-	x := 12
-	y := 5
+	second := 31
+	minute := 1
 
-	if x%y == 0 {
-		fmt.Println(y, "divides exactly into", x)
-	} else {
-		fmt.Println(y, "does not divide exactly into", x)
+	if minute < 59 && second+1 > 59 {
+		minute++
 	}
 
-	// thisMonth := 4
-	// fmt.Println("The month after", thisMonth, "is", thisMonth+1)
-
-	for m := 1; m <= 12; m++ {
-		fmt.Println("The month after", m, "is", m%12+1)
-	}
+	fmt.Println(minute)
 }
