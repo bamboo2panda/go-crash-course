@@ -1,14 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func main() {
-	second := 31
-	minute := 1
+	a := 12
+	b := 6
 
-	if minute < 59 && second+1 > 59 {
-		minute++
+	c, err := devideTwoNumbers(a, b)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		if c == 2 {
+			fmt.Println("We found 2!")
+		}
 	}
+}
 
-	fmt.Println(minute)
+func devideTwoNumbers(x, y int) (int, error) {
+	if y == 0 {
+		return 0, errors.New("can not devide by zero")
+	}
+	return x / y, nil
 }
