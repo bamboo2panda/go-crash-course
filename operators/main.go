@@ -3,32 +3,20 @@ package main
 import "fmt"
 
 func main() {
-	// precedence
-	// multiplication and devision
-	a := 12.0 * 3.0 / 4.0
-	b := (12.0 * 3.0) / 4.0
-	c := 12.0 * (3.0 / 4.0)
-	fmt.Println("a", a, "b", b, "c", c)
+	// does one number devide exactly into another?
+	x := 12
+	y := 5
 
-	// integer devision
-	unclear := 12 * (3 / 4)
-	fmt.Println("unclear", unclear)
+	if x%y == 0 {
+		fmt.Println(y, "divides exactly into", x)
+	} else {
+		fmt.Println(y, "does not divide exactly into", x)
+	}
 
-	// perentesis
-	f := 12.0 / 3.0 / 4.0
-	fmt.Println("f", f)
-	f = 12.0 / (3.0 / 4.0)
-	fmt.Println("f", f)
+	// thisMonth := 4
+	// fmt.Println("The month after", thisMonth, "is", thisMonth+1)
 
-	// addition and substraction
-	fmt.Println()
-	x := 12 + 3 - 4
-	y := (12 + 3) - 4
-	z := 12 + (3 - 4)
-	fmt.Println("x", x, "y", y, "z", z)
-
-	x = 12 + 3*4
-	y = (12 + 3) * 4
-	z = 12 + (3 * 4)
-	fmt.Println("x", x, "y", y, "z", z)
+	for m := 1; m <= 12; m++ {
+		fmt.Println("The month after", m, "is", m%12+1)
+	}
 }
