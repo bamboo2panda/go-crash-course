@@ -1,30 +1,32 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "strings"
 
 func main() {
-	newString := "Go is a great programming language. Go for it!"
+	str := "alpha alpha alpha alpha alpha"
+	str = replaceNth(str, "alpha", "beta", 3)
+	println(str)
 
-	if strings.Contains(newString, "Go") {
-		// newString = strings.Replace(newString, "Go", "Golang", 1)
-		newString = strings.ReplaceAll(newString, "Go", "Golang")
+}
+
+func replaceNth(s, old, new string, n int) string {
+	// index
+	i := 0
+
+	for j := 1; j <= n; j++ {
+		x := strings.Index(s[i:], old)
+		if x < 0 {
+			// we did not find it
+			break
+		}
+
+		i = i + x
+		if j == n {
+			return s[:i] + new + s[i+len(old):]
+		}
+
+		i += len(old)
 	}
 
-	fmt.Println(newString)
-
-	// string comparison
-	if "Alpha" > "Absolute" {
-		fmt.Println("A is greater then B")
-	} else {
-		fmt.Println("A is not greater than B")
-	}
-
-	badEmail := " me@here.com "
-	badEmail = strings.TrimSpace(badEmail)
-	fmt.Printf("=%s=", badEmail)
-	fmt.Println()
-
+	return s
 }
