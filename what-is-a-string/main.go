@@ -1,32 +1,22 @@
 package main
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-	str := "alpha alpha alpha alpha alpha"
-	str = replaceNth(str, "alpha", "beta", 3)
-	println(str)
+	myString := "This string is a clear EXAMPLE of why we search in one case only."
 
-}
-
-func replaceNth(s, old, new string, n int) string {
-	// index
-	i := 0
-
-	for j := 1; j <= n; j++ {
-		x := strings.Index(s[i:], old)
-		if x < 0 {
-			// we did not find it
-			break
-		}
-
-		i = i + x
-		if j == n {
-			return s[:i] + new + s[i+len(old):]
-		}
-
-		i += len(old)
+	if strings.Contains(strings.ToLower(myString), "this") {
+		fmt.Println("Found it!")
+	} else {
+		fmt.Println("Did not find it!")
 	}
 
-	return s
+	// other case functions
+	fmt.Println(strings.ToLower(myString))
+	fmt.Println(strings.ToUpper(myString))
+	fmt.Println(strings.Title(myString))
+	fmt.Println(strings.Title(strings.ToLower(myString)))
 }
