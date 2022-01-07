@@ -1,22 +1,31 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-	courseName := "Learn Go for Beginners Crash course"
-
-	for i := 0; i <= 21; i++ {
-		fmt.Println(string(courseName[i]))
+	courses := []string{
+		"Learn Go for beginners Crash cource",
+		"Learn Java for beginners Crash cource",
+		"Learn Python for beginners Crash cource",
+		"Learn C for beginners Crash cource",
 	}
-	fmt.Println()
 
-	fmt.Println("Length of courseName is", len(courseName))
+	for _, x := range courses {
+		if strings.Contains(x, "Go") {
+			fmt.Println("Go is found on", x, "and index is", strings.Index(x, "Go"))
+		}
+	}
 
-	var mySlice []string
-	mySlice = append(mySlice, "one")
-	mySlice = append(mySlice, "two")
-	mySlice = append(mySlice, "three")
-
-	fmt.Println("mySlice has", len(mySlice), "elements")
-	fmt.Println("the last element in mySlice is", mySlice[len(mySlice)-1])
+	newString := "Go is a great programming language. Go for it!"
+	fmt.Println(strings.HasPrefix(newString, "Go"))
+	fmt.Println(strings.HasPrefix(newString, "Python"))
+	fmt.Println(strings.HasSuffix(newString, "!"))
+	fmt.Println(strings.Count(newString, "Go"))
+	fmt.Println(strings.Count(newString, "Fish"))
+	fmt.Println(strings.Index(newString, "Go"))
+	fmt.Println(strings.Index(newString, "Python"))
+	fmt.Println(strings.LastIndex(newString, "Go"))
 }
