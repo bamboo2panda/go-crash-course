@@ -17,7 +17,7 @@ const (
 type Round struct {
 	Winner         int    `json:"winner"`
 	ComputerChoice string `json:"computer_choice"`
-	RoundResult    string `json:"roud_result"`
+	RoundResult    string `json:"round_result"`
 }
 
 func PlayRound(playerValue int) Round {
